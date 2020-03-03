@@ -6,7 +6,17 @@ use GuzzleHttp\Client as GuzzleClient;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 $client = new Client();
-$client->setClient(new GuzzleClient(['verify' => false]));
+$client->setClient(new GuzzleClient([
+    'verify' => false,
+    'headers' => [
+        'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0',
+        'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language' => 'en-US,en;q=0.5',
+        'Referer' => 'https://service.mohw.gov.tw/',
+        'Pragma' => 'no-cache',
+        'Cache-Control' => 'no-cache',
+    ]
+    ]));
 $crawler = $client->request('GET', 'https://service.mohw.gov.tw/DOCMAP/CusSite/TCMLQueryForm.aspx?mode=1');
 
 $form = $crawler->selectButton('送出')->form();
