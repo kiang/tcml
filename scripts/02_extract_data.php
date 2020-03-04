@@ -24,14 +24,12 @@ foreach($q AS $code) {
         mkdir($thePath, 0777, true);
     }
 }
-$now = date('Y-m-d H:i:s');
 while($line = fgetcsv($fh, 2048)) {
     $parts = explode('字第', $line[0]);
     $parts[1] = preg_replace('/[^0-9]/i', '', $parts[1]);
     $data = array(
         'code' => "{$q[$parts[0]]}{$parts[1]}",
         'url' => "https://service.mohw.gov.tw/DOCMAP/CusSite/TCMLResultDetail.aspx?LICEWORDID={$q[$parts[0]]}&LICENUM={$parts[1]}",
-        'time' => $now,
     );
     $jsonFile = "{$jsonPath}/{$q[$parts[0]]}/{$parts[1]}.json";
     $raw = array_combine($head, $line);
