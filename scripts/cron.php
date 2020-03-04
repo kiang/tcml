@@ -1,11 +1,11 @@
 <?php
 
-$rootPath = __DIR__;
+$rootPath = dirname(__DIR__);
 $now = date('Y-m-d H:i:s');
 
 exec("cd {$rootPath} && /usr/bin/git pull");
 
-exec("/usr/bin/php -q {$rootPath}/Crawler.php");
+exec("/usr/bin/php -q {$rootPath}/scripts/01_get_list.php");
 
 exec("cd {$rootPath} && /usr/bin/git add -A");
 
