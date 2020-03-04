@@ -1,6 +1,6 @@
 <?php
-
-require 'vendor/autoload.php';
+$basePath = dirname(__DIR__);
+require $basePath . '/vendor/autoload.php';
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -39,8 +39,8 @@ $form->set($formInput);
 
 $client->submit($form);
 
-file_put_contents(__DIR__ . '/data.xls', $client->getResponse()->getContent());
+file_put_contents($basePath . '/data.xls', $client->getResponse()->getContent());
 
-$spreadsheet = IOFactory::load(__DIR__ . '/data.xls');
+$spreadsheet = IOFactory::load($basePath . '/data.xls');
 $writer = new \PhpOffice\PhpSpreadsheet\Writer\Csv($spreadsheet);
-$writer->save("data.csv");
+$writer->save("{$basePath}/data.csv");
