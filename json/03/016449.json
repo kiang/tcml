@@ -2,10 +2,10 @@
     "code": "03016449",
     "url": "https:\/\/service.mohw.gov.tw\/DOCMAP\/CusSite\/TCMLResultDetail.aspx?LICEWORDID=03&LICENUM=016449",
     "中文品名": "“昕泰”昕泰勇筋壯骨健步膠囊（養血壯筋健步丸加減味）",
-    "英文品名": "Shin Tai Yung Jin Juang Gu Jian Bu Capsuls \"Shin Tai\"(Yang Shie Juang Jin Jian Bu Pills Jia Bu Pills Jia Jian Wei)",
+    "英文品名": "Shin Tai Yung Jin Juang Gu Jian Bu Capsuls \"Shin Tai\" (Yang Shie Juang Jin Jian Bu Pills Jia Jian Wei)",
     "許可證字號": "衛部成製字第016449號",
-    "發證日期": "2014-02-19",
-    "有效日期": "2024-02-19",
+    "發證日期": "2023-10-25",
+    "有效日期": "2029-02-19",
     "製造商名稱": "昕泰生技製藥股份有限公司",
     "製造商地址": "桃園市大溪區仁善里八鄰仁德北街四五號",
     "申請商名稱": "昕泰生技製藥股份有限公司",
@@ -13,7 +13,7 @@
     "適應症": "神經痛、關節痛、筋肉痛。",
     "劑型": "膠囊劑",
     "類別": "成藥",
-    "包裝": "18~1000粒塑膠瓶及10粒鋁箔片x1~100片盒裝",
+    "包裝": "18~1000粒塑膠瓶裝、10粒鋁箔片x2~100片盒裝",
     "單複方": "複方",
     "限制項目": "",
     "ingredients": [
@@ -138,9 +138,9 @@
             "單位": "mg"
         },
         {
-            "成分名稱": "0號膠囊",
-            "含量描述": "",
-            "含量": "1粒",
+            "成分名稱": "",
+            "含量描述": "0號膠囊",
+            "含量": "",
             "單位": ""
         }
     ]
