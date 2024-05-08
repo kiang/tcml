@@ -4,29 +4,41 @@ $fh = fopen($basePath . '/data.csv', 'r');
 $head = fgetcsv($fh, 2048);
 $q = array(
     '衛部藥製' => '01',
-    '衛部藥輸' => '02',
-    '衛部成製' => '03',
-    '衛部中藥輸' => '04',
-    '衛部成輸' => '05',
+    '衛部(署)藥製' => '01',
     '衛署藥製' => '01',
+    '01' => '01',
+    '衛部藥輸' => '02',
     '衛署藥輸' => '02',
+    '衛部(署)藥輸' => '02',
+    '衛部成製' => '03',
+    '衛部(署)成製' => '03',
+    '衛署(部)成製' => '03',
     '衛署成製' => '03',
+    '03' => '03',
+    '衛部中藥輸' => '04',
+    '衛部(署)中藥輸' => '04',
     '衛署中藥輸' => '04',
+    '衛部成輸' => '05',
+    '衛部(署)成輸' => '05',
     '衛署成輸' => '05',
     '內衛藥製' => '12',
     '內衛藥輸' => '13',
     '內衛成製' => '14',
+    '內部註銷' => '15',
 );
 $jsonPath = $basePath . '/json';
-foreach($q AS $code) {
+foreach ($q as $code) {
     $thePath = $jsonPath . '/' . $code;
-    if(!file_exists($thePath)) {
+    if (!file_exists($thePath)) {
         mkdir($thePath, 0777, true);
     }
 }
-while($line = fgetcsv($fh, 2048)) {
+while ($line = fgetcsv($fh, 2048)) {
     $parts = explode('字第', $line[0]);
     $parts[1] = preg_replace('/[^0-9]/i', '', $parts[1]);
+    if (!isset($q[$parts[0]])) {
+        continue;
+    }
     $data = array(
         'code' => "{$q[$parts[0]]}{$parts[1]}",
         'url' => "https://service.mohw.gov.tw/DOCMAP/CusSite/TCMLResultDetail.aspx?LICEWORDID={$q[$parts[0]]}&LICENUM={$parts[1]}",
@@ -56,26 +68,26 @@ while($line = fgetcsv($fh, 2048)) {
     $lines = explode("\n", $raw['處方成分']);
     $lines[0] = str_replace('處方:', '', $lines[0]);
     $firstLine = true;
-    foreach($lines AS $line) {
-        if($firstLine) {
+    foreach ($lines as $line) {
+        if ($firstLine) {
             $parts = array($line);
             $firstLine = false;
         } else {
             $parts = preg_split('/[ \\(\\)]/', $line);
         }
-        
+
         $ingredient = array(
             '成分名稱' => '',
             '含量描述' => '',
             '含量' => '',
             '單位' => '',
         );
-        if(!empty($parts[2])) {
+        if (!empty($parts[2])) {
             $ingredient['成分名稱'] = $parts[0];
             $ingredient['含量'] = $parts[2];
             $ingredient['單位'] = $parts[3];
             $data['ingredients'][] = $ingredient;
-        } elseif(!empty($parts[0])) {
+        } elseif (!empty($parts[0])) {
             $ingredient['含量描述'] = $parts[0];
             $data['ingredients'][] = $ingredient;
         }
