@@ -1,8 +1,8 @@
 {
     "code": "03016438",
     "url": "https:\/\/service.mohw.gov.tw\/DOCMAP\/CusSite\/TCMLResultDetail.aspx?LICEWORDID=03&LICENUM=016438",
-    "中文品名": "“昕泰”保骨風濕寧膠囊",
-    "英文品名": "Bau Gu Feng Shr Nin Capsuls “Shin Tai”",
+    "中文品名": "“双養”双養保骨節膠囊",
+    "英文品名": "\"Shu Yang\" Shu Yang Joint Support Capsules",
     "許可證字號": "衛部成製字第016438號",
     "發證日期": "2014-01-27",
     "有效日期": "2029-01-27",
@@ -102,10 +102,10 @@
             "單位": "mg"
         },
         {
-            "成分名稱": "0號膠囊",
+            "成分名稱": "0號深黃色蓋淺黃色體膠囊",
             "含量描述": "",
-            "含量": "1粒",
-            "單位": ""
+            "含量": "1",
+            "單位": "粒"
         }
     ]
 }
