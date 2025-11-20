@@ -2,7 +2,7 @@
     "code": "03015503",
     "url": "https:\/\/service.mohw.gov.tw\/DOCMAP\/CusSite\/TCMLResultDetail.aspx?LICEWORDID=03&LICENUM=015503",
     "中文品名": "“三帆”三帆通血關捷寧膠囊（養血壯筋健步丸加減味）",
-    "英文品名": "Three Mast Tong Xie Guan Jie Ning Cap.“S.F.”",
+    "英文品名": "Three Mast Tong Xie Guan Jie Ning Cap. \"S.F.\" (Yang Shie Juang Jin Jian Bu Pill Jia Jian Wei)",
     "許可證字號": "衛署成製字第015503號",
     "發證日期": "2010-04-07",
     "有效日期": "2030-05-03",
@@ -15,7 +15,7 @@
     "類別": "成藥",
     "包裝": "10粒\/PTP片×3~100片鋁箔袋盒裝及30~1000粒塑膠瓶盒裝",
     "單複方": "複方",
-    "限制項目": "",
+    "限制項目": "依藥品查驗登記審查準則第108-1條，不得製造。",
     "ingredients": [
         {
             "成分名稱": "",
@@ -136,6 +136,12 @@
             "含量描述": "",
             "含量": "4",
             "單位": "mg"
+        },
+        {
+            "成分名稱": "0號全無色透明膠囊",
+            "含量描述": "",
+            "含量": "1",
+            "單位": "粒"
         }
     ]
 }
